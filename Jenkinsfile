@@ -39,10 +39,11 @@ pipeline {
         stage('Deploy') {
             steps {
                 bat """
-                echo Deploying WAR to Tomcat...
-                copy /Y target\\*.war "C:\\Users\\ssatv\\Downloads\\apache-tomcat-10.1.48\\webapps\\"
+                    echo Deploying WAR to Tomcat...
+                    copy /Y target\\*.war "C:\\apache-tomcat-10.1.48\\webapps\\"
                 """
             }
         }
+
     }
 }
