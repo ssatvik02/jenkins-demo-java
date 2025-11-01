@@ -41,6 +41,10 @@ pipeline {
                 bat """
                     echo Deploying WAR to Tomcat...
                     copy /Y target\\*.war "C:\\apache-tomcat-10.1.48\\webapps\\"
+                    echo Restarting Tomcat server...
+                    C:\\apache-tomcat-10.1.48\\bin\\shutdown.bat
+                    timeout /t 5
+                    C:\\apache-tomcat-10.1.48\\bin\\startup.bat
                 """
             }
         }
