@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/<your-username>/jenkins-demo-java.git'
+                git branch: 'main', url: 'https://github.com/ssatvik02/jenkins-demo-java.git'
             }
         }
 
@@ -40,7 +40,7 @@ pipeline {
             steps {
                 bat """
                     echo Deploying WAR to Tomcat...
-                    copy /Y target\\*.war "C:\\apache-tomcat-9.x\\webapps\\"
+                    copy /Y target\\*.war "C:\\Users\\ssatv\\Downloads\\apache-tomcat-10.1.48\\webapps\\"
                 """
             }
         }
